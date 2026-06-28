@@ -7,3 +7,10 @@
 /25-fall/prog/fish-game/*
 !/25-fall/prog/fish-game/src/
 !/25-fall/prog/fish-game/src/**
+
+!/26-spr/
+/26-spr/*
+!/26-spr/oop/
+/26-spr/oop/*
+!/26-spr/oop/crjson/
+!/26-spr/oop/crjson/**

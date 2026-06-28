@@ -1,0 +1,22 @@
+CompileFlags:
+  Add:
+    - "-std=c++23"
+
+    # MSVC and Windows headers.
+    - "-I/mnt/c/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Tools/MSVC/14.44.35207/include"
+    - "-I/mnt/c/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/cppwinrt"
+    - "-I/mnt/c/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/shared"
+    - "-I/mnt/c/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/ucrt"
+    - "-I/mnt/c/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/um"
+    - "-I/mnt/c/Program Files (x86)/Windows Kits/10/Include/10.0.26100.0/winrt"
+    - "--target=x86_64-pc-windows-msvc"
+
+    # Windows macros.
+    - -D_WINDOWS
+    - -D_WIN32
+    - -D_WIN64
+    - -DUNICODE
+    - -D_UNICODE
+
+    # MSVC compatibility mode.
+    - -fms-compatibility

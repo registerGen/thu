@@ -14,3 +14,8 @@
 /26-spr/oop/*
 !/26-spr/oop/crjson/
 !/26-spr/oop/crjson/**
+
+!/26-sum/
+/26-sum/*
+!/26-sum/tjudge/
+!/26-sum/tjudge/**

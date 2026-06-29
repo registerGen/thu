@@ -1,4 +1,6 @@
 /*
+!.github
+
 !/25-fall/
 /25-fall/*
 !/25-fall/prog/
@@ -14,6 +16,12 @@
 /26-spr/oop/*
 !/26-spr/oop/crjson/
 !/26-spr/oop/crjson/**
+!/26-spr/or/
+/26-spr/or/*
+!/26-spr/or/simplex/
+!/26-spr/or/simplex/**
+!/26-spr/or/simplex-cli/
+!/26-spr/or/simplex-cli/**
 
 !/26-sum/
 /26-sum/*

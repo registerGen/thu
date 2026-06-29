@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simplex Solver</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h1>Simplex Solver</h1>
+    <!-- prettier-ignore -->
+    <div class="help"><b>Input format:</b>
+  Line 1: n m          — n variables, m constraints
+  Line 2: c₁ c₂ … cₙ   — objective coefficients (maximise)
+  Lines: a₁ … aₙ b     — constraint row, RHS last (aᵀx ≤ b)
+
+  Rational mode accepts integers and fractions like 1/3.
+
+<b>Example:</b>
+  2 2
+  1 1
+  2 1 6
+  -1 2 3</div>
+
+    <textarea
+      id="input"
+      maxlength="512"
+      spellcheck="false"
+      placeholder="2 2&#10;1 1&#10;2 1 6&#10;-1 2 3"
+    ></textarea>
+    <small id="input-count">0/512 characters</small>
+
+    <div class="methods">
+      <strong>Methods:</strong>
+      <label><input type="checkbox" id="cb-twophase" checked /> Two-Phase</label>
+      <label><input type="checkbox" id="cb-bigm" checked /> Big-M</label>
+    </div>
+
+    <div class="methods">
+      <strong>Arithmetic:</strong>
+      <label
+        ><input type="radio" name="mode" value="rational" checked /> Rational (exact, e.g.
+        1/3)</label
+      >
+      <label><input type="radio" name="mode" value="float" /> Float (f64)</label>
+    </div>
+
+    <div>
+      <button id="solve">Solve</button>
+      <span id="error"></span>
+    </div>
+
+    <footer>
+      <a href="https://github.com/registerGen/thu/tree/main/26-spr/or/simplex" target="_blank"
+        >Source code</a
+      >
+      · Made by copilot with registerGen ·
+      <a href="https://registergen.github.io/thu/" target="_blank">Life in THU</a>
+    </footer>
+
+    <div class="results" id="results"></div>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

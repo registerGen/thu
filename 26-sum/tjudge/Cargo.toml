@@ -1,0 +1,19 @@
+[workspace]
+members = [
+    "crates/tjudge-judger",
+    "crates/tjudge-store",
+    "crates/tjudge-tui",
+]
+
+resolver = "3"
+
+[workspace.dependencies]
+crossterm = "0.29"
+libc = "0.2"
+ratatui = "0.30"
+rayon = "1"
+serde = { version = "1", features = ["derive"] }
+tempfile = "3"
+thiserror = "2"
+toml = { version = "0.8", features = ["parse", "display"] }
+tui-input = "0.15"

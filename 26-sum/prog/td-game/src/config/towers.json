@@ -1,0 +1,78 @@
+[
+  {
+    "kind": "normal",
+    "max_health": 100,
+    "resource_cost": 50,
+    "attack_interval": 0.5,
+    "attack_range": 2.5,
+    "targeting": "first",
+    "min_speed": 7.0,
+    "max_speed": 9.0,
+    "max_angle_deviation": 0.06,
+    "health_damage": 15
+  },
+  {
+    "kind": "slow",
+    "max_health": 100,
+    "resource_cost": 60,
+    "attack_interval": 2,
+    "attack_range": 2.5,
+    "targeting": "first",
+    "min_speed": 5.0,
+    "max_speed": 7.0,
+    "max_angle_deviation": 0.08,
+    "slow_factor": 0.4,
+    "slow_duration": 2.5
+  },
+  {
+    "kind": "poison",
+    "max_health": 100,
+    "resource_cost": 75,
+    "attack_interval": 5,
+    "attack_range": 2.5,
+    "targeting": "first",
+    "min_speed": 5.0,
+    "max_speed": 7.0,
+    "max_angle_deviation": 0.08,
+    "poison_damage": 20,
+    "poison_duration": 1.2
+  },
+  {
+    "kind": "splash",
+    "max_health": 100,
+    "resource_cost": 100,
+    "attack_interval": 1.5,
+    "attack_range": 3.5,
+    "targeting": "closest",
+    "min_speed": 4.0,
+    "max_speed": 6.0,
+    "max_angle_deviation": 0.05,
+    "radius": 2.0,
+    "health_damage": 15
+  },
+  {
+    "kind": "laser",
+    "max_health": 100,
+    "resource_cost": 120,
+    "attack_interval": 1.5,
+    "attack_range": 6.0,
+    "targeting": "strongest",
+    "min_speed": 14.0,
+    "max_speed": 14.0,
+    "max_angle_deviation": 0.0,
+    "width": 0.5,
+    "health_damage": 20
+  },
+  {
+    "kind": "resource",
+    "max_health": 100,
+    "resource_cost": 50,
+    "resource_inc_amount": 8,
+    "resource_inc_interval": 2.5
+  },
+  {
+    "kind": "wall",
+    "max_health": 400,
+    "resource_cost": 25
+  }
+]

@@ -1,0 +1,65 @@
+{
+  "normal": {
+    "health": 25,
+    "speed": 1.8,
+    "tower_damage": 5,
+    "tower_damage_cooldown": 0.5,
+    "size": 0.5,
+    "score": 10
+  },
+  "fast": {
+    "health": 12,
+    "speed": 3.5,
+    "tower_damage": 3,
+    "tower_damage_cooldown": 0.3,
+    "size": 0.4,
+    "score": 15
+  },
+  "armored": {
+    "health": 100,
+    "speed": 0.8,
+    "tower_damage": 8,
+    "tower_damage_cooldown": 0.7,
+    "size": 0.7,
+    "score": 25
+  },
+  "resistant": {
+    "health": 50,
+    "speed": 1.3,
+    "tower_damage": 5,
+    "tower_damage_cooldown": 0.5,
+    "size": 0.5,
+    "slow_resist": 2.0,
+    "splash_resist": 0.3,
+    "score": 30
+  },
+  "splitter": {
+    "health": 40,
+    "speed": 1.2,
+    "tower_damage": 4,
+    "tower_damage_cooldown": 0.5,
+    "size": 0.6,
+    "score": 35,
+    "child": {
+      "count": 3,
+      "health": 8,
+      "speed": 2.5,
+      "tower_damage": 2,
+      "tower_damage_cooldown": 0.4,
+      "width": 0.3,
+      "height": 0.3,
+      "score": 5,
+      "perturbation": 1.0
+    }
+  },
+  "boss": {
+    "health": 500,
+    "speed": 0.6,
+    "tower_damage": 12,
+    "tower_damage_cooldown": 0.5,
+    "size": 0.9,
+    "shield": 10,
+    "score": 200,
+    "regen": { "amount": 4, "duration": 1.0, "interval": 3.0 }
+  }
+}

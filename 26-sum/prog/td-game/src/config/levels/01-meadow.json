@@ -1,0 +1,58 @@
+{
+  "name": "Meadow",
+  "index": 1,
+  "map": {
+    "rows": 7,
+    "cols": 12,
+    "terrain": [
+      ["grass", "grass", "grass", "grass", "grass", "grass", "grass", "grass", "grass", "grass", "grass", "grass"],
+      ["grass", "grass", "grass", "grass", "grass", "grass", "grass", "grass", "grass", "grass", "grass", "grass"],
+      ["grass", "rock",  "grass", "grass", "fertile", "grass", "grass", "grass", "grass", "rock",  "grass", "grass"],
+      ["grass", "grass", "grass", "grass", "grass", "grass", "grass", "grass", "grass", "grass", "grass", "grass"],
+      ["grass", "grass", "grass", "grass", "grass", "grass", "grass", "grass", "grass", "grass", "grass", "grass"],
+      ["grass", "grass", "grass", "grass", "fertile", "grass", "grass", "grass", "grass", "grass", "grass", "grass"],
+      ["grass", "grass", "grass", "rock",  "grass", "grass", "grass", "grass", "grass", "grass", "rock",  "grass"]
+    ]
+  },
+  "routes": [
+    { "path": [[11, 3], [3, 3], [3, 5], [0, 5]], "portals": [] }
+  ],
+  "starting_resources": 150,
+  "auto_increase": { "amount": 4, "interval": 1.0 },
+  "available_towers": ["normal", "slow", "resource", "wall"],
+  "gaps": [3.0, 4.0, 4.0, 5.0, 5.0],
+  "waves": [
+    { "spawns": [
+      { "type": "normal", "time": 0.0, "route": 0 },
+      { "type": "normal", "time": 1.0, "route": 0 },
+      { "type": "normal", "time": 2.0, "route": 0 },
+      { "type": "normal", "time": 3.0, "route": 0 }
+    ]},
+    { "spawns": [
+      { "type": "fast", "time": 0.0, "route": 0 },
+      { "type": "fast", "time": 0.6, "route": 0 },
+      { "type": "fast", "time": 1.2, "route": 0 },
+      { "type": "normal", "time": 2.0, "route": 0 },
+      { "type": "normal", "time": 2.8, "route": 0 }
+    ]},
+    { "spawns": [
+      { "type": "armored", "time": 0.0, "route": 0 },
+      { "type": "armored", "time": 2.5, "route": 0 }
+    ]},
+    { "spawns": [
+      { "type": "normal", "time": 0.0, "route": 0 },
+      { "type": "fast", "time": 0.5, "route": 0 },
+      { "type": "normal", "time": 1.0, "route": 0 },
+      { "type": "fast", "time": 1.5, "route": 0 },
+      { "type": "normal", "time": 2.0, "route": 0 },
+      { "type": "fast", "time": 2.5, "route": 0 }
+    ]},
+    { "spawns": [
+      { "type": "normal", "time": 0.0, "route": 0 },
+      { "type": "normal", "time": 0.8, "route": 0 },
+      { "type": "normal", "time": 1.6, "route": 0 },
+      { "type": "normal", "time": 2.4, "route": 0 },
+      { "type": "boss", "time": 4.0, "route": 0 }
+    ]}
+  ]
+}

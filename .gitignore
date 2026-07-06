@@ -25,3 +25,9 @@
 /26-sum/*
 !/26-sum/tjudge/
 !/26-sum/tjudge/**
+!/26-sum/prog/
+/26-sum/prog/*
+!/26-sum/prog/td-game/
+/26-sum/prog/td-game/*
+!/26-sum/prog/td-game/src/
+!/26-sum/prog/td-game/src/**

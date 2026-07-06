@@ -1,0 +1,79 @@
+{
+  "normal": {
+    "health": 100,
+    "cost": 50,
+    "attack_cooldown": 0.5,
+    "range": 2.5,
+    "targeting": "first",
+    "bullet": {
+      "min_speed": 7.0,
+      "max_speed": 9.0,
+      "max_angle_deviation": 0.06,
+      "health_damage": 15
+    }
+  },
+  "slow": {
+    "health": 100,
+    "cost": 60,
+    "attack_cooldown": 2,
+    "range": 2.5,
+    "targeting": "first",
+    "bullet": {
+      "min_speed": 5.0,
+      "max_speed": 7.0,
+      "max_angle_deviation": 0.08,
+      "slow": { "factor": 0.4, "duration": 2.5 }
+    }
+  },
+  "poison": {
+    "health": 100,
+    "cost": 75,
+    "attack_cooldown": 5,
+    "range": 2.5,
+    "targeting": "first",
+    "bullet": {
+      "min_speed": 5.0,
+      "max_speed": 7.0,
+      "max_angle_deviation": 0.08,
+      "poison": { "damage": 20, "duration": 1.2 }
+    }
+  },
+  "splash": {
+    "health": 100,
+    "cost": 100,
+    "attack_cooldown": 1.5,
+    "range": 3.5,
+    "targeting": "closest",
+    "bullet": {
+      "min_speed": 4.0,
+      "max_speed": 6.0,
+      "max_angle_deviation": 0.05,
+      "radius": 2.0,
+      "health_damage": 15
+    }
+  },
+  "laser": {
+    "health": 100,
+    "cost": 120,
+    "attack_cooldown": 1.5,
+    "range": 6.0,
+    "targeting": "first",
+    "bullet": {
+      "min_speed": 14.0,
+      "max_speed": 14.0,
+      "max_angle_deviation": 0.0,
+      "width": 0.5,
+      "health_damage": 20
+    }
+  },
+  "resource": {
+    "health": 100,
+    "cost": 50,
+    "resource_amount": 8,
+    "resource_cooldown": 2.5
+  },
+  "wall": {
+    "health": 400,
+    "cost": 25
+  }
+}

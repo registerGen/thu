@@ -1,0 +1,36 @@
+[package]
+name = "td-game-rs"
+version = "0.1.0"
+edition = "2024"
+description = "Rust rewrite of the td-game model core."
+license = "MIT"
+repository = "https://github.com/registerGen/thu/tree/main/26-sum/prog/td-game/src"
+
+[lib]
+name = "td_game_rs"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[features]
+default = ["web"]
+cxx-bridge = ["dep:cxx", "dep:cxx-build"]
+web = ["dep:wasm-bindgen", "dep:serde-wasm-bindgen", "dep:tsify"]
+
+[dependencies]
+cxx = { version = "1", optional = true }
+rand = { version = "0.10", features = ["std_rng"] }
+serde = { version = "1", features = ["derive"] }
+serde-wasm-bindgen = { version = "0.6", optional = true }
+serde_json = "1"
+slotmap = "1"
+thiserror = "2"
+tsify = { version = "0.5", optional = true }
+wasm-bindgen = { version = "0.2", optional = true }
+
+# OS entropy on wasm32 is served by getrandom's wasm_js backend (calls into
+# JS crypto). The `wasm_js` feature is a no-op on native targets, so the
+# cxx-bridge/Qt build is unaffected.
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+getrandom = { version = "0.4", features = ["wasm_js"] }
+
+[build-dependencies]
+cxx-build = { version = "1", optional = true }

@@ -1,0 +1,16 @@
+# Cross-compile the Rust core to Windows MSVC from Linux, paired with
+# cmake/toolchain-windows-msvc.cmake (clang-cl + lld-link + xwin SDK at
+# /opt/xwin). The staticlib is linked into the Qt app by CMake's lld-link;
+# these flags make cargo's own link steps (the cdylib) resolve the Windows
+# SDK / MSVC runtime via xwin and lld-link too.
+[target.x86_64-pc-windows-msvc]
+linker = "lld-link-23"
+rustflags = [
+  "-L", "native=/opt/xwin/crt/lib/x86_64",
+  "-L", "native=/opt/xwin/sdk/lib/ucrt/x86_64",
+  "-L", "native=/opt/xwin/sdk/lib/um/x86_64",
+  "-C", "link-arg=/libpath:/opt/xwin/crt/lib/x86_64",
+  "-C", "link-arg=/libpath:/opt/xwin/sdk/lib/ucrt/x86_64",
+  "-C", "link-arg=/libpath:/opt/xwin/sdk/lib/um/x86_64",
+  "-A", "linker_messages",
+]

@@ -1,0 +1,16 @@
+{
+  "name": "web",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "wasm": "wasm-pack build .. --target web --no-default-features --features web && rm -rf pkg && mv ../pkg pkg",
+    "dev": "pnpm wasm && vite",
+    "build": "pnpm wasm && tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "~6.0.2",
+    "vite": "^8.2.0"
+  }
+}

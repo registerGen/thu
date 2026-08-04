@@ -1,0 +1,106 @@
+name: Deploy web projects
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "26-spr/or/simplex/**"
+      - "26-sum/prog/td-game/src/rust/**"
+      - "26-sum/prog/td-game/config/**"
+      - "index.html"
+      - ".github/workflows/deploy.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - id: changes
+        uses: dorny/paths-filter@v4
+        with:
+          filters: |
+            simplex:
+              - "26-spr/or/simplex/**"
+            tower-defense:
+              - "26-sum/prog/td-game/src/rust/**"
+              - "26-sum/prog/td-game/config/**"
+
+      - uses: pnpm/action-setup@v6
+        with:
+          version: 11
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: pnpm
+          cache-dependency-path: |
+            26-spr/or/simplex/web/pnpm-lock.yaml
+            26-sum/prog/td-game/src/rust/web/pnpm-lock.yaml
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-unknown-unknown
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: |
+            26-spr/or/simplex
+            26-sum/prog/td-game/src/rust
+
+      - uses: taiki-e/install-action@v2
+        with:
+          tool: wasm-pack
+
+      # Pages deployments replace the complete site artifact. Restore an
+      # unchanged app's last dist/ directory so it remains in that artifact.
+      - id: simplex-dist
+        uses: actions/cache@v4
+        with:
+          path: 26-spr/or/simplex/web/dist
+          key: simplex-dist-${{ hashFiles('26-spr/or/simplex/**') }}
+          restore-keys: simplex-dist-
+
+      - name: Build simplex solver
+        if: steps.changes.outputs.simplex == 'true' || steps.simplex-dist.outputs.cache-hit != 'true'
+        working-directory: 26-spr/or/simplex/web
+        run: pnpm install --frozen-lockfile && pnpm build -- --base=/thu/simplex-solver/
+
+      - id: tower-defense-dist
+        uses: actions/cache@v4
+        with:
+          path: 26-sum/prog/td-game/src/rust/web/dist
+          key: tower-defense-dist-${{ hashFiles('26-sum/prog/td-game/src/rust/**', '26-sum/prog/td-game/config/**') }}
+          restore-keys: tower-defense-dist-
+
+      - name: Build tower defense
+        if: steps.changes.outputs.tower-defense == 'true' || steps.tower-defense-dist.outputs.cache-hit != 'true'
+        working-directory: 26-sum/prog/td-game/src/rust/web
+        run: pnpm install --frozen-lockfile && pnpm build
+
+      - name: Stage for Pages
+        run: |
+          mkdir -p deploy/simplex-solver deploy/tower-defense
+          cp index.html deploy/
+          cp -r 26-spr/or/simplex/web/dist/* deploy/simplex-solver/
+          cp -r 26-sum/prog/td-game/src/rust/web/dist/* deploy/tower-defense/
+
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: deploy
+      - id: deploy
+        uses: actions/deploy-pages@v5

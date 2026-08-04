@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Life in THU</title>
+    <style>
+      :root {
+        color: #1f2937;
+        background: #f8fafc;
+        font-family: system-ui, sans-serif;
+      }
+      body {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 5rem 1.5rem;
+      }
+      h1 {
+        margin: 0;
+        font-size: clamp(1.5rem, 4vw, 3rem);
+      }
+      p {
+        color: #475569;
+        line-height: 1.6;
+      }
+      .projects {
+        display: grid;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+      a {
+        display: block;
+        padding: 1.25rem 1.5rem;
+        border: 1px solid #cbd5e1;
+        border-radius: 0.75rem;
+        color: inherit;
+        background: #fff;
+        text-decoration: none;
+      }
+      a:hover,
+      a:focus-visible {
+        border-color: #2563eb;
+        box-shadow: 0 4px 16px #2563eb22;
+      }
+      span {
+        display: block;
+      }
+      .project-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 1rem;
+      }
+      strong {
+        font-size: 1.15rem;
+      }
+      .semester {
+        color: #64748b;
+        font-size: 0.9rem;
+        white-space: nowrap;
+      }
+      span {
+        margin-top: 0.25rem;
+        color: #64748b;
+      }
+      footer {
+        margin-top: 3rem;
+        color: #64748b;
+        font-size: 0.9rem;
+      }
+      footer a {
+        display: inline;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        color: #2563eb;
+        background: transparent;
+        text-decoration: underline;
+      }
+      footer a:hover,
+      footer a:focus-visible {
+        box-shadow: none;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Life in THU</h1>
+      <p>Some course projects/stuffs from my time at THU.</p>
+      <nav class="projects" aria-label="Projects">
+        <a href="./simplex-solver/" target="_blank">
+          <div class="project-title">
+            <strong>Simplex solver</strong>
+            <span class="semester">2026 Spring</span>
+          </div>
+          <span>A tool for checking simplex method solutions and iteration tableaux.</span>
+        </a>
+        <a href="./tower-defense/" target="_blank">
+          <div class="project-title">
+            <strong>Tower defense</strong>
+            <span class="semester">2026 Summer</span>
+          </div>
+          <span>A browser tower defense game.</span>
+        </a>
+      </nav>
+      <footer>
+        <a href="https://github.com/registerGen/thu" target="_blank">Source code</a>
+        · Made by registerGen
+      </footer>
+    </main>
+  </body>
+</html>

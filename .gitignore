@@ -34,3 +34,14 @@
 /26-sum/prog/td-game/*
 !/26-sum/prog/td-game/src/
 !/26-sum/prog/td-game/src/**
+
+!/26-fall/
+/26-fall/*
+!/26-fall/algo/
+/26-fall/algo/*
+!/26-fall/algo/.agents/
+/26-fall/algo/.agents/*
+!/26-fall/algo/.agents/skills/
+/26-fall/algo/.agents/skills/*
+!/26-fall/algo/.agents/skills/algo-hw/
+!/26-fall/algo/.agents/skills/algo-hw/**

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Algorithm Homework"
+  short_description: "Course homework pipeline: crate, bench, report, ship"
+  default_prompt: "Use $algo-hw to scaffold and run the next Algorithm Design and Analysis homework."

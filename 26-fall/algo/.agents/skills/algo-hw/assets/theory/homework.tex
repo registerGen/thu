@@ -1,0 +1,38 @@
+% vim:tw=80:
+\documentclass{article}
+\usepackage{amsthm}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[margin=1in]{geometry}
+\usepackage{thmtools}
+\usepackage[normalem]{ulem}
+\usepackage{unicode-math}
+
+\setlist{nosep,listparindent=\parindent}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{{{COURSE}}, {{HOMEWORK}}}
+\fancyhead[R]{Name: {{AUTHOR}}}
+\fancyfoot[C]{\thepage}
+
+\declaretheoremstyle[
+  headfont=\normalfont\bfseries,
+  notefont=\normalfont\itshape,
+  bodyfont=\normalfont,
+]{problemstyle}
+\declaretheorem[name=Solution to Problem, style=problemstyle]{solution}
+
+\begin{document}
+
+\begin{center}
+  \LARGE {{HOMEWORK}}
+\end{center}
+
+\begin{solution}[Problem title]
+  % TODO(algo-hw): one `solution` environment per problem, with the problem's
+  % own title in brackets.
+\end{solution}
+
+\end{document}
